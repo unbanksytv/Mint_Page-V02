@@ -15,7 +15,7 @@ const View = () => {
     <Container>
       <VideoContainer>
         <MediaRenderer
-          src={nft?.metadata.animation_url}
+          src={nft?.metadata.image}
           alt={nft?.metadata.name}
         />
       </VideoContainer>
