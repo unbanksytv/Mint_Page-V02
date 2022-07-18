@@ -7,13 +7,18 @@ const Footer = () => {
       <FooterContainer>
         © 2022 Degen Vibes LLC 
       </FooterContainer>
-      <a href={"https://twitter.com/livethelifetv"} target={"_blank"} rel="noreferrer"> <FaTwitter /> </a>
-      <a href={"https://discord.gg/gvo"} target={"_blank"} rel="noreferrer"> <FaDiscord /> </a>
+      <SocialLinkFooter href={"https://twitter.com/livethelifetv"} target={"_blank"} rel="noreferrer"> <FaTwitter /> </SocialLinkFooter>
+      <SocialLinkFooter href={"https://discord.gg/gvo"} target={"_blank"} rel="noreferrer"> <FaDiscord /> </SocialLinkFooter>
     </Container>
   )
 }
 
 export default Footer
+
+const SocialLinkFooter = tw.a`
+ my-5
+ p-1
+`
 
 const FooterContainer = tw.div`
  max-w-screen-lg
