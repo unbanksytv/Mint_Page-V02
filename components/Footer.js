@@ -5,11 +5,9 @@ const Footer = () => {
   return (
     <Container>
       <FooterContainer>
-       © Degen Vibes LLC 
+       <SocialLinkFooter href={"https://twitter.com/livethelifetv"} target={"_blank"} rel="noreferrer"> <FaTwitter /> </SocialLinkFooter>
+       <SocialLinkFooter href={"https://discord.gg/gvo"} target={"_blank"} rel="noreferrer"> <FaDiscord /> </SocialLinkFooter>
       </FooterContainer>
-     <SocialLinkFooter href={"https://twitter.com/livethelifetv"} target={"_blank"} rel="noreferrer"> <FaTwitter /> </SocialLinkFooter>
-     <SocialLinkFooter href={"https://discord.gg/gvo"} target={"_blank"} rel="noreferrer"> <FaDiscord /> </SocialLinkFooter>
-     <SocialLinkFooter href={"https://github.com"} target={"_blank"} rel="noreferrer"> <FaGithub /> </SocialLinkFooter>
     </Container>
   )
 }
@@ -17,13 +15,14 @@ const Footer = () => {
 export default Footer
 
 const SocialLinkFooter = tw.a`
- w-5
  flex
+ justify-center
 `
 
 const FooterContainer = tw.div`
- max-w-screen-lg
- w-full
+ mt-[30px]
+ flex
+ justify-center
 `
 
 const Container = tw.div`
