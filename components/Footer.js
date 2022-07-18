@@ -1,14 +1,15 @@
 import tw from "tailwind-styled-components";
-import { FaDiscord, FaTwitter } from "react-icons/fa";
+import { FaDiscord, FaTwitter, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <Container>
       <FooterContainer>
-        © 2022 Degen Vibes LLC 
+       © Degen Vibes LLC 
       </FooterContainer>
-      <SocialLinkFooter href={"https://twitter.com/livethelifetv"} target={"_blank"} rel="noreferrer"> <FaTwitter /> </SocialLinkFooter>
-      <SocialLinkFooter href={"https://discord.gg/gvo"} target={"_blank"} rel="noreferrer"> <FaDiscord /> </SocialLinkFooter>
+     <SocialLinkFooter href={"https://twitter.com/livethelifetv"} target={"_blank"} rel="noreferrer"> <FaTwitter /> </SocialLinkFooter>
+     <SocialLinkFooter href={"https://discord.gg/gvo"} target={"_blank"} rel="noreferrer"> <FaDiscord /> </SocialLinkFooter>
+     <SocialLinkFooter href={"https://github.com"} target={"_blank"} rel="noreferrer"> <FaGithub /> </SocialLinkFooter>
     </Container>
   )
 }
@@ -16,8 +17,8 @@ const Footer = () => {
 export default Footer
 
 const SocialLinkFooter = tw.a`
- my-5
- p-1
+ w-5
+ flex
 `
 
 const FooterContainer = tw.div`
@@ -27,7 +28,8 @@ const FooterContainer = tw.div`
 
 const Container = tw.div`
  flex
- justify-center
  my-5
  text-center
+ w-full
+ mt-1
 `
