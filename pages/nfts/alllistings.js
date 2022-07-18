@@ -2,9 +2,9 @@ import Head from "next/head";
 import tw from "tailwind-styled-components";
 
 // Components
-import Header from "../components/Header";
-import { default as Gallery } from "../components/Gallery/Listings";
-import Footer from "../components/Footer";
+import Header from "../../../components/Header";
+import { default as Gallery } from "../../../components/Gallery/Listings";
+import Footer from "../../../components/Footer";
 
 export default function Listings() {
   return (
