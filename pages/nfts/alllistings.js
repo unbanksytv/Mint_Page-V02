@@ -3,7 +3,7 @@ import tw from "tailwind-styled-components";
 
 // Components
 import Header from "../components/Header";
-import Listings from "../components/Gallery/Listings";
+import { default as Gallery } from "../components/Gallery/Listings";
 import Footer from "../components/Footer";
 
 export default function Listings() {
@@ -15,7 +15,7 @@ export default function Listings() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <Listings />
+      <Gallery />
       <Footer />
     </Container>
   )
