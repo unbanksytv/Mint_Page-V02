@@ -1,41 +1,31 @@
-import { useNFTs, ThirdwebNftMedia, useMarketplace, useBuyNow, useActiveListings } from '@thirdweb-dev/react';
-import { ThirdwebSDK } from "@thirdweb-dev/sdk";
+import Head from "next/head";
+import tw from "tailwind-styled-components";
 
-const sdk = new ThirdwebSDK("rinkeby");
-const { contract } = useContract("0x3Fe6cfeb8530B3283c4d3E276BCC418FFdc0b748");
-const { data: nfts, isLoading, error } = useNFTs(contract?.nft, { start: 0, count: 20 });
+// Components
+import Header from "../components/Header";
+import Listings from "../components/Gallery/Listings";
+import Footer from "../components/Footer";
 
-export default function Marketplace() {
-    const marketplace = useMarketplace("0x3Fe6cfeb8530B3283c4d3E276BCC418FFdc0b748");
-    const { data: listings } = useActiveListings(marketplace);
-    const { mutate: buy } = useBuyNow(marketplace);
-  
-    return (
-      <div>
-        {listings?.map((listing) => (
-          <div key={listing.id.toString()}>
-            <ThirdwebNftMedia
-              metadata={{ ...listing.asset }}
-            />
-            <h3>{listing.asset.name}</h3>
-            <p>
-              {listing.buyoutCurrencyValuePerToken.displayValue}
-              {" "}
-              {listing.buyoutCurrencyValuePerToken.symbol}
-            </p>
-              <button
-                onClick={() =>
-                  buy({
-                    id: listing.id,
-                    type: listing.type,
-                    buyAmount: 1,
-                  })
-                }
-              >
-                Buy
-              </button>
-          </div>
-        ))}
-      </div>
-    );
-  }
+export default function Listings() {
+  return (
+    <Container>
+      <Head>
+        <title>The Photo Labs - NFT Gallery - All Listings</title>
+        <meta name="description" content="Made with love by LiveTheLifeTV" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Header />
+      <Listings />
+      <Footer />
+    </Container>
+  )
+}
+
+const Container = tw.div`
+ w-screen
+ h-screen
+ px-7
+ flex
+ flex-col
+ justify-between
+`
