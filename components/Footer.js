@@ -21,5 +21,5 @@ const Container = tw.div`
  flex
  justify-center
  my-5
- text-right
+ text-center
 `

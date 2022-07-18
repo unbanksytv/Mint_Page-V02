@@ -48,7 +48,7 @@ const Minting = () => {
     <Container>
       <Mint>
         <TitleContainer>
-          <Title>The Photo Labs <br /> by LiveTheLife<br /> Claim Your NFT</Title>
+          <Title>The Photo Labs <br /> by LiveTheLife</Title>
           <Count>
             {address && totalSupply}
           </Count>
@@ -101,7 +101,8 @@ const ButtonContainer = tw.div`
  mt-2
  gap-4
  flex
- p-3
+ p-2
+ ml-2
 `
 
 const Mint = tw.div`
@@ -120,10 +121,10 @@ const Mint = tw.div`
 const Title = tw.h2`
  uppercase
  text-3xl
- italic
  font-bold
- mt-3
- p-3
+ mt-4
+ p-2
+ ml-2
 `
 
 const TitleContainer = tw.div`
