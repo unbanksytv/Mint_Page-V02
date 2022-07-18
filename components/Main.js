@@ -23,7 +23,7 @@ const Main = () => {
     <>
       <Container>
         <VideoContainer>
-          <video src="./H2F.mp4" muted={true} autoPlay={true} loop={true} />
+         <video src="./H2F.mp4" muted={true} autoPlay={true} loop={true} />
         </VideoContainer>
         <Minting />
       </Container>
