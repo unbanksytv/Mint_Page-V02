@@ -4,9 +4,6 @@ import {
     useAddress,
     useClaimNFT,
     useEditionDrop,
-    useMetamask,
-    useNetwork,
-    useNetworkMismatch,
     useNFTs,
   } from "@thirdweb-dev/react";
   import React from "react";
@@ -24,7 +21,7 @@ import {
     const editionDropContract = useEditionDrop(contracts[2].address);
     const router = useRouter()
   
-    const mintpass = async () => {
+    const FoundersMintPass = async () => {
       if(MintPass && address) {
         setInProgress(true);
         try {
@@ -125,4 +122,4 @@ import {
     );
   }
 
-  export default MintPass
+  export default FoundersMintPass
