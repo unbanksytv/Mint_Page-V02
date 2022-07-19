@@ -1,4 +1,4 @@
-const contractAddresses = [
+const contracts = [
     {
       name: "Marketplace",
       description: "Photo Labs Art Gallery Auction - Rinkeby",
@@ -36,4 +36,4 @@ const contractAddresses = [
     },
   ];
   
-  export default contractAddresses;
+  export default contracts;
