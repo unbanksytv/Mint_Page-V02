@@ -1,10 +1,6 @@
 import { useNFTs, ThirdwebNftMedia, useMarketplace, useBuyNow, useActiveListings } from '@thirdweb-dev/react';
 import { ThirdwebSDK } from "@thirdweb-dev/sdk";
 
-const sdk = new ThirdwebSDK("rinkeby");
-const { contract } = useContract("0x3Fe6cfeb8530B3283c4d3E276BCC418FFdc0b748");
-const { data: nfts, isLoading, error } = useNFTs(contract?.nft, { start: 0, count: 20 });
-
 export default function Marketplace() {
     const marketplace = useMarketplace("0x3Fe6cfeb8530B3283c4d3E276BCC418FFdc0b748");
     const { data: listings } = useActiveListings(marketplace);
