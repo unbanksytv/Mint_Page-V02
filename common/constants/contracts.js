@@ -7,10 +7,10 @@ const contracts = [
       icon: `/icons/github.svg`,
     },
     {
-      name: "Mint Pass",
+      name: "FoundersMintPass",
       description: "Photo Labs Founders Mint Pass - Edition Drop 1155 - Rinkeby",
       address: "0xb1ED41698a311f08880211f6c61655fDCA9C14ed",
-      link: `/mintpass`,
+      link: `/FoundersMintPass`,
       icon: `/icons/github.svg`,
     },
     {

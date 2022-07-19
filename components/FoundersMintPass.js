@@ -3,11 +3,12 @@ import {
     ThirdwebNftMedia,
     useAddress,
     useClaimNFT,
+    useDisconnect,
     useEditionDrop,
     useNFTs,
   } from "@thirdweb-dev/react";
   import React from "react";
-  import contracts from "../common/contracts";
+  import contracts from "../common/constants/contracts";
   import { useEffect, useState } from "react";
   import { toast } from "react-toastify";
   import { useRouter } from 'next/router'
@@ -21,7 +22,7 @@ import {
     const editionDropContract = useEditionDrop(contracts[2].address);
     const router = useRouter()
   
-    const FoundersMintPass = async () => {
+    const MintPass = async () => {
       if(MintPass && address) {
         setInProgress(true);
         try {
@@ -51,7 +52,7 @@ import {
 
   
     // Get all NFTs from the Edition Drop contract
-    const { data: nfts, isLoading } = useNFTs(MintPassContract);
+    const { data: nfts, isLoading } = useNFTs(FoundersMintPass);
   
     // Claim an NFT (and update the nfts above)
     const { mutate: claimNft, isLoading: claiming } =
@@ -122,4 +123,4 @@ import {
     );
   }
 
-  export default FoundersMintPass
+  export default MintPass
