@@ -6,7 +6,7 @@ import Header from "../components/Header";
 import FoundersMintPass from "../components/FoundersMintPass";
 import Footer from "../components/Footer";
 
-export default function ViewNFT() {
+export default function MintPass() {
   return (
     <Container>
       <Head>
