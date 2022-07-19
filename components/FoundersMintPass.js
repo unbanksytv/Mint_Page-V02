@@ -10,31 +10,25 @@ import {
     useNFTs,
   } from "@thirdweb-dev/react";
   import React from "react";
-  import contracts from "../constants/contracts";
-  import css from "../css/Nft.module.css";
+  import contracts from "../common/contracts";
   import { useEffect, useState } from "react";
-  import ReactLoading from "react-loading";
   import { toast } from "react-toastify";
   import { useRouter } from 'next/router'
-  import { Button } from "./Button";
 
-  const Minting = () => {
+  const MintPass = () => {
     const [totalSupply, setTotalSupply] = useState(0);
     const [inProgress, setInProgress] = useState(false);
     const [completed, setCompleted] = useState(false);
     const address = useAddress();
-    const connectWithMetamask = useMetamask();
     const disconnectWallet = useDisconnect();
-    const networkMismatch = useNetworkMismatch();
-    const [, switchNetwork] = useNetwork();
-    const editionDropContract = useEditionDrop(contractAddresses[2].address);
+    const editionDropContract = useEditionDrop(contracts[2].address);
     const router = useRouter()
   
-    const mint = async () => {
-      if(EditionDrop && address) {
+    const mintpass = async () => {
+      if(MintPass && address) {
         setInProgress(true);
         try {
-          await EditionDrop.claimTo(address, 0, 1);
+          await MintPass.claimTo(address, 0, 1);
           setInProgress(false);
           setCompleted(true);
           router.push('/success')
@@ -50,21 +44,21 @@ import {
   
     useEffect(() => {
       const getTotal = async () => {
-        if(EditionDrop) {
-          const total = await EditionDrop.totalSupply(0);
+        if(MintPass) {
+          const total = await MintPass.totalSupply(0);
           setTotalSupply(total.toNumber());
         }
       }
       getTotal();
-    }, [EditionDrop])
+    }, [MintPass])
 
   
     // Get all NFTs from the Edition Drop contract
-    const { data: nfts, isLoading } = useNFTs(editionDropContract);
+    const { data: nfts, isLoading } = useNFTs(MintPassContract);
   
     // Claim an NFT (and update the nfts above)
     const { mutate: claimNft, isLoading: claiming } =
-      useClaimNFT(editionDropContract);
+      useClaimNFT(MintPassContract);
   
     return (
       <div className={styles.container}>
@@ -131,50 +125,4 @@ import {
     );
   }
 
-  
-  const Count = tw.div`
-  flex
-  grow
-  items-center
-  justify-center
- `
- 
- const ButtonContainer = tw.div`
-  mt-2
-  gap-4
-  flex
-  p-2
-  ml-2
- `
- 
- const Mint = tw.div`
-  max-w-screen-sm
-  lg:w-1/3
-  md:w-1/2
-  bg-black
-  lg:mt-[-200px]
-  z-50
-  flex
-  flex-col
-  pb-4
-  pr-4
- `
- 
- const Title = tw.h2`
-  uppercase
-  text-3xl
-  font-bold
-  mt-4
-  p-2
-  ml-2
- `
- 
- const TitleContainer = tw.div`
-  flex
- `
- 
- const Container = tw.div`
-  max-w-screen-lg
-  w-full
-  z-50
- `
+  export default MintPass
