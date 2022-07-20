@@ -15,7 +15,7 @@ export default function MintPass() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <FoundersMintPass />
+      <MintPass />
       <Footer />
     </Container>
   )

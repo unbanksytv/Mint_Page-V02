@@ -15,8 +15,8 @@ const contracts = [
     },
     {
       name: "NFT Drop",
-      description: "Claimable drop of one-of-one NFTs",
-      address: "",
+      description: "Claimable drop of 721 NFTs",
+      address: "0x773178333c4ff593F749D88FDC1Ad96017D3eccB",
       link: `/nfts/alllistings`,
       icon: `/icons/github.svg`,
     },
